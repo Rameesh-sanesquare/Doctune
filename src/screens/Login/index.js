@@ -24,6 +24,16 @@ class Login extends Component {
             usersList: JSON.parse(usersList)
         }, () => { console.log(this.state.usersList) })
     }
+    componentWillUnmount() {
+        this.setState({
+            mail: null,
+            password: null,
+            rePassword: null,
+            usersList: [],
+            errorEmail: null,
+            errorPassword: null,
+        })
+    }
     validateMail = (text) => {
         if (text.length > 0) {
             if (isEmail(text)) {

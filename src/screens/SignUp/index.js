@@ -18,6 +18,16 @@ class SignUp extends Component {
             errorRePassword: null
         }
     }
+    componentWillUnmount() {
+        this.setState({
+            mail: null,
+            password: null,
+            rePassword: null,
+            errorEmail: null,
+            errorPassword: null,
+            errorRePassword: null
+        })
+    }
     onSuccess = () => {
         Alert.alert(
             "Success",
